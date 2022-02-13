@@ -84,7 +84,7 @@ exports[`<Banner /> should render correctly 1`] = `
   .c2 {
     border-radius: 0 0 0.4rem 0.4rem;
     padding: 4.0rem;
-    position: relative;
+    position: absolute;
     bottom: 0;
     left: 0;
   }
