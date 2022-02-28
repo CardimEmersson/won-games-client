@@ -79,12 +79,13 @@ describe('<Button />', () => {
       background: 'none',
       color: '#F231A5'
     });
-    expect(screen.getByRole('button', { name: /Buy now/i })).toHaveStyleRule(
-      'background',
-      'none',
-      {
-        modifier: ':hover'
-      }
-    );
+
+    // expect(screen.getByRole('button', { name: /Buy now/i })).toHaveStyleRule(
+    //   'background',
+    //   'none',
+    //   {
+    //     modifier: ':hover'
+    //   }
+    // );
   });
 });
