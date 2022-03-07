@@ -19,18 +19,29 @@ const props = {
   freeHighlight: highlightMock
 };
 
+jest.mock('components/Showcase', () => {
+  return {
+    _esModule: true,
+    Showcase: function Mock() {
+      return <div data-testid="Mock Showcase"></div>;
+    }
+  };
+});
+
+jest.mock('components/BannerSlider', () => {
+  return {
+    _esModule: true,
+    BannerSlider: function Mock() {
+      return <div data-testid="Mock BannerSlider"></div>;
+    }
+  };
+});
+
 describe('<Home />', () => {
-  it('should render menu and footer', () => {
+  it('should render banner and showcases', () => {
     renderWithTheme(<Home {...props} />);
 
-    expect(screen.getByLabelText(/open menu/i)).toBeInTheDocument();
-
-    expect(
-      screen.getByRole('heading', { name: /contact/i })
-    ).toBeInTheDocument();
-  });
-
-  it('should render the sections', () => {
-    renderWithTheme(<Home {...props} />);
+    expect(screen.getAllByTestId('Mock Showcase')).toHaveLength(5);
+    expect(screen.getByTestId('Mock BannerSlider')).toBeInTheDocument();
   });
 });
