@@ -8,3 +8,9 @@ module.exports = withPWA({
     disable: !isProd
   }
 });
+
+module.exports = {
+  images: {
+    domains: ['source.unsplash.com']
+  }
+};

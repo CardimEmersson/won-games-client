@@ -35,6 +35,12 @@ const GameCard = ({
 }: GameCardProps) => {
   return (
     <S.Wrapper>
+      {!!ribbon && (
+        <Ribbon color={ribbonColor} size={ribbonSize}>
+          {ribbon}
+        </Ribbon>
+      )}
+
       <S.ImageBox>
         <img src={img} alt={title} />
       </S.ImageBox>
@@ -57,12 +63,6 @@ const GameCard = ({
           <Button icon={<AddShoppingCart />} size="small" />
         </S.BuyBox>
       </S.Content>
-
-      {!!ribbon && (
-        <Ribbon color={ribbonColor} size={ribbonSize}>
-          {ribbon}
-        </Ribbon>
-      )}
     </S.Wrapper>
   );
 };

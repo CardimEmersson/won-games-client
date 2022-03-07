@@ -21,6 +21,7 @@ export const Wrapper = styled.section`
         justify-content: center;
         margin: 0 ${theme.spacings.xxsmall};
         cursor: pointer;
+        transition: box-shadow ${theme.transition.default};
 
         &.slick-active {
           background: ${theme.colors.primary};
@@ -40,6 +41,7 @@ export const Wrapper = styled.section`
 
       .slick-slide {
         visibility: hidden;
+
         &.slick-active.slick-current {
           visibility: visible;
         }

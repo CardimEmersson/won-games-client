@@ -53,8 +53,9 @@ export const Content = styled.div`
   `}
 `;
 
-export const Info = styled.div`
+export const Info = styled.a`
   max-width: calc(100% - 2.5rem);
+  text-decoration: none;
 `;
 
 export const Title = styled.h3`
@@ -78,9 +79,10 @@ export const FavButton = styled.div`
   ${({ theme }) => css`
     color: ${theme.colors.primary};
     position: absolute;
-    right: 0;
+    right: -1rem;
     top: -0.5rem;
     cursor: pointer;
+
     svg {
       width: 2.5rem;
     }
@@ -122,6 +124,7 @@ export const Price = styled.div<PriceProps>`
     font-weight: ${theme.font.bold};
     height: 3rem;
     align-items: center;
+
     ${!isPromotional && priceModifiers.default(theme)}
     ${isPromotional && priceModifiers.promotional(theme)}
   `}
